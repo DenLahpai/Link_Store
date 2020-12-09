@@ -3,27 +3,18 @@ require_once "../functions.php";
 
 $db = new Database ();
 
-$stm = "SELECT  
-    Users.Username, 
-    Users.Name, 
-    Users.Email,
-    Users.Mobile,
-    Stores.Name AS StoresName,
-    Stores.Code AS StoresCode,
-    Stores.Link AS StoresLink
-    FROM Users 
-    LEFT OUTER JOIN Stores ON Users.StoresId = Stores.Id
-    WHERE BINARY Users.Username = :Username
-    AND BINARY Users.Password = :Password
-    AND BINARY Stores.Code = :Code
+$stm = "SELECT * FROM Users 
+    WHERE BINARY Username = :Username
+    AND BINARY Password = :Password
+    AND BINARY StoresCode = :StoresCode
 ;";
 $db->query($stm);
 $db->bind(':Username', $_POST['Username']);
 $db->bind(':Password', md5($_POST['Password']));
-$db->bind(':Code', $_POST['Code']);
-$rc = $db->rowCount();
+$db->bind(':StoresCode', $_POST['StoresCode']);
+$rowCount = $db->rowCount();
 
-if ($rc == 1) {
+if ($rowCount == 1) {
     // Zero is returned for no error!
     echo 0;
     $rows = $db->resultsetArray();
@@ -32,7 +23,7 @@ if ($rc == 1) {
     }
 }
 
-if ($rc == 0) {
+if ($rowCount == 0) {
     // Two is returned for wrong username, password or store code...
     echo 2;
 }

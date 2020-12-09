@@ -2,10 +2,10 @@
 function login () {
     var Username = $("#Username");
     var Password = $("#Password");
-    var Code = $("#Code");
+    var StoresCode = $("#StoresCode");
     Username.removeClass('input-error');
     Password.removeClass('input-error');
-    Code.removeClass('input-error');
+    StoresCode.removeClass('input-error');
     var inputError = false;
     var errorMsg = ""; 
         
@@ -21,8 +21,8 @@ function login () {
         errorMsg = "Please input all the field(s) in red!";
     }
 
-    if (Code.val() == "") {
-        Code.addClass('input-error');
+    if (StoresCode.val() == "") {
+        StoresCode.addClass('input-error');
         inputError = true;
         errorMsg = "Please input all the filed(s) in red!";
     }
@@ -35,9 +35,9 @@ function login () {
         $.post('includes/login.php', {
             Username: Username.val(),
             Password: Password.val(),
-            Code: Code.val()
+            StoresCode: StoresCode.val()
             }, function (data) {
-                
+                                
                 if (data == 0) {
                     // Zero is returned when no error! Heading to home.html
                     $(location).attr('href', 'home.html');
