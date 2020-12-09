@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>Welcome</title>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <header></header>
+        <!-- main-content  -->
+        <div class="main-content">
+            <!-- login-page  -->
+            <div class="login-page">
+                <section id="welcome-title">
+                    <h3>Welcome to Link Webstore Admin</h3>
+                </section>
+                <section id="login-form">
+                    <!-- login-form-contents  -->
+                    <div class="login-form-contents">
+                        <!-- login-form-content  -->
+                        <div class="login-form-content">
+                            <input type="text" id="Username" placeholder="Username">
+                        </div>
+                        <!-- end of login-form-content  -->
+                        <!-- login-form-content  -->
+                        <div class="login-form-content">
+                            <input type="Password" id="Password" placeholder="Password">
+                        </div>
+                         <!-- end of login-form-content  -->
+                        <!-- login-form-content -->
+                        <div class="login-form-content">
+                            <input type="text" id="Code" placeholder="Store Code">
+                        </div>
+                        <!-- end of login-form-content -->
+                        <!-- login-form-content  -->
+                        <div class="login-form-content">
+                            <button class="medium-button" id="login-button" onclick="login();">Login</button>
+                        </div>
+                        <!-- end of loginform-content  -->
+                    </div>
+                    <!-- end of login-form-contents  -->
+                </section>
+                <section id="response">
+                    <div class="message"></div>
+                </section>
+            </div>
+            <!-- end of login-page  -->
+        </div>
+        <!-- end of main-content  -->
+        <footer style="margin-top: 210px;"></footer>
+    </div>
+    <!-- end of wrapper  -->
+</body>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/scripts.js"></script>
+<script>
+$(document).ready(function () {
+    //function to get head
+    $.get("includes/head.html", function (data) {
+        $("head").prepend(data);
+    });
+
+
+    // function to include footer
+    $.get("includes/footer.php", function (data) {
+        $("footer").prepend(data);
+    });
+});
+</script>
+</html>

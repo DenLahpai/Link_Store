@@ -1,0 +1,151 @@
+:root {
+    --color1: #EBECED;
+    --color2: #46AAEC;
+    --color3: #EEE2DC;
+    --color4: #41B3A3;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+   
+}
+
+.wrapper {
+    background: var(--color1);
+}
+
+.main-content {
+    padding: 12px;
+}
+
+section {
+    margin: 3px
+}
+
+/****** Login page ******/
+.login-page {
+    margin-top: 150px;
+    display: grid;
+    place-items: center;
+}
+
+.login-form-contents {
+    text-align: center;
+    border: 1px solid white;
+    place-items: center;
+}
+
+.login-form-content {
+    padding: 6px;
+}
+
+.login-form-content input {
+    padding: 6px;
+    background: none;
+}
+
+.login-form-content input:focus{
+    background: white;
+}
+
+.login-form-content button {
+    width: 100%;
+    padding: 9px;
+    background-color: var(--color2);
+    color: white;
+    font-weight: bold;
+    /* border: 1px solid white; */
+}
+
+/****** Styles for header ******/
+
+header {
+    background: var(--color2);
+    width: 100%;
+}
+
+.nav-menu {
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gold;
+}
+
+.nav-menu-left {
+    padding: 3px;
+}
+
+.hamburger {
+    padding: 6px;
+    border-radius: 6px;
+    background: var(--color4);
+}
+
+.hamburger div {
+    width: 42px;
+    height: 9px;
+    background: white;
+    margin: 6px 0px;
+}
+
+.nav-menu-middle {
+    padding: 3px;
+    text-align: left;
+    color: white;
+}
+
+.nav-menu-right {
+    padding: 3px;    
+}
+
+.nav-menu-right > div {
+    
+}
+
+#settings {
+    font-size: 2em;
+    color: white;
+}
+
+.main-menu {
+    display: none;
+    padding: 12px;
+    text-align: center;    
+}
+
+.main-menu > div {
+    margin: 24px;
+}
+
+.setting-menu {
+   position: fixed;
+   right: 0;
+   background: var(--color3);
+}
+
+.setting-menu > ul li {
+    list-style: none;
+    padding: 3px;
+    border: 1px solid var(--color4);
+}
+
+/****** Styles for footer ******/
+footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background: white;
+}
+
+.large-button {
+    width: 90%;
+    padding: 12px;
+}
+
