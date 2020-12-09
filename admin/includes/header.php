@@ -18,7 +18,7 @@ require_once "../functions.php";
     </div>
     <!-- end of nav-menu-middle  -->
     <!-- nav-menu-right  -->
-    <div class="nav-menu-right">
+    <div class="nav-menu-right" onclick="Toggle('.setting-menu')">
        <div>
            <span class="symbols" id="settings">&#9881;</span>
        </div>
@@ -39,8 +39,8 @@ require_once "../functions.php";
 <!-- setting-menu  -->
 <div class="setting-menu">
     <ul>
-        <li>Reset Password</li>
-        <li>Edit My Info</li>
+        <li><a href="change_password.html">Change Password</a></li>
+        <li><a href="my_info.html">My Info</a></li>
     </ul>
 </div>
 <!-- end of setting menu  -->

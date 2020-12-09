@@ -9,7 +9,49 @@
         <header></header>
         <!-- main-content  -->
         <div class="main-content">
+            <section id="page_title">
+                <h1>Modules</h1>
+            </section>
+            <section id="modules">
+                <!-- module-cards-container -->
+                <div class="module-cards-container">
+                    <!-- module-card -->
+                    <div class="module-card">
+                        <div class="module-card-header">
+                            <h3>Products</h3>
+                        </div>
+                        <div class="module-card-desc">
+                            <div>
+                                This module will allow you to add new products to your online store. 
+                                Once your products are in the database, you can edit them.
+                            </div>
+                        </div>
+                        <div class="module-card-bottom">
+                            <button type="button" class="medium-button">Go Now!</button>
+                        </div>
+                    </div>
+                    <!-- end of module-card -->
 
+                    <!-- module-card -->
+                    <div class="module-card">
+                        <div class="module-card-header">
+                            <h3>Product</h3>
+                        </div>
+                        <div class="module-card-desc">
+                            <div>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque deleniti quam natus voluptatem praesentium distinctio accusamus harum ullam nulla doloremque, ea fugiat maiores dolores quia et earum saepe enim similique. 
+                            </div>
+                        </div>
+                        <div class="module-card-bottom">
+                            <button type="button" class="medium-button">Go Now!</button>
+                        </div>
+                    </div>
+                    <!-- end of module-card -->
+
+
+                </div>
+                <!-- end of module-cards-container  -->
+            </section>
         </div>
         <!-- end of main-content -->
         <footer></footer>
@@ -29,7 +71,6 @@ $(document).ready(function () {
     $.get("includes/header.php", function (data){
         $("header").prepend(data);
     });
-
 
     // function to include footer
     $.get("includes/footer.php", function (data) {
