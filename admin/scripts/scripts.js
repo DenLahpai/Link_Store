@@ -107,10 +107,29 @@ function forgotPasswordRequest() {
             Mobile: Mobile.val()
             }, function (data) {
                 $("#response").html(data);
-            }
-        
-        );
+                //TODO need to continue after uploading on a webserver
+            }        
+        );        
+    }
+}
 
-        
+/***** function to check if DOB is correct ******/
+function checkDOB (uchk) {
+    var DOB = $("#DOB");
+    var errorMsg = "";
+    if (DOB.val() == "") {
+        // error is displayed if no data is entered.
+        errorMsg = "<span style='color: red;'>Please enter your date of birth to continue!</span>";
+        $("#response").html(errorMsg);
+    }
+    else {
+        // checking if the user DOB is correct.
+        $.post("includes/check_dob.php", {
+            uchk: uchk,
+            DOB: DOB.val()
+            }, function (data) {
+                alert(data);
+            }        
+        );
     }
 }
