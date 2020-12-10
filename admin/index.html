@@ -55,16 +55,15 @@
 <script src="scripts/scripts.js"></script>
 <script>
 $(document).ready(function () {
-    //function to get head
-    $.get("includes/head.html", function (data) {
-        $("head").prepend(data);
-    });
+//function to get head
+$.get("includes/head.html", function (data) {
+    $("head").prepend(data);
+});
 
-
-    // function to include footer
-    $.get("includes/footer.php", function (data) {
-        $("footer").prepend(data);
-    });
+// function to include footer
+$.get("includes/footer.php", function (data) {
+    $("footer").prepend(data);
+});
 });
 </script>
 </html>

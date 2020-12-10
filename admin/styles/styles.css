@@ -3,7 +3,7 @@
     --color2: #46AAEC;
     --color3: #EEE2DC;
     --color4: #41B3A3;
-    --color5: #7A2640;
+    --color5: rgba(235, 150, 5, 1);
 }
 
 * {
@@ -20,7 +20,8 @@
 }
 
 section {
-    margin: 3px
+    margin: 3px;
+    text-align: center;
 }
 
 /****** Login page ******/
@@ -135,8 +136,8 @@ header {
 }
 
 #page_title {
-    text-align: center;
     margin: 12px;
+    margin-bottom: 36px;
 }
 
 #page_title > h1 {
@@ -145,6 +146,10 @@ header {
     display: inline;
     border-radius: 6px;
     color: white;
+}
+
+.form > div {
+    margin: 9px;
 }
 
 #modules {
@@ -180,10 +185,20 @@ header {
     color: white;
 }
 
+/****** Styles for buttons ******/
+
 .medium-button {
     margin: 6px;
-    padding: 12px;
+    padding: 12px 18px;
+}
 
+/****** Styles for input fields ******/
+.input-error {
+    background-color: red;
+}
+
+#response {
+    text-align: center;
 }
 
 /****** Styles for footer ******/
