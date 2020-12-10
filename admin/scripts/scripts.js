@@ -113,23 +113,18 @@ function forgotPasswordRequest() {
     }
 }
 
-/***** function to check if DOB is correct ******/
-function checkDOB (uchk) {
-    var DOB = $("#DOB");
+/***** function to check if 2 passwords match ******/
+function checkPasswords () {
+    var password = $("#password");
+    var repassword = $("#repassword");
     var errorMsg = "";
-    if (DOB.val() == "") {
-        // error is displayed if no data is entered.
-        errorMsg = "<span style='color: red;'>Please enter your date of birth to continue!</span>";
-        $("#response").html(errorMsg);
+    $("#button-submit").attr("disabled", "disabled");
+    
+    if (password.val() === repassword.val()) {
+        $("#button-submit").removeAttr("disabled", "disabled");
     }
     else {
-        // checking if the user DOB is correct.
-        $.post("includes/check_dob.php", {
-            uchk: uchk,
-            DOB: DOB.val()
-            }, function (data) {
-                alert(data);
-            }        
-        );
+        errorMsg = "<span style='color: red;'>The two passwords do NOT match!</span>";
+        $("#response").html(errorMsg);
     }
 }

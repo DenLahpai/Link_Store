@@ -1,6 +1,6 @@
 <?php
 require_once "functions.php";
-
+$rowCount = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,18 +24,53 @@ require_once "functions.php";
                             Please enter your Date of Birth:
                         </div>
                         <div>
-                            <input type="date" id="DOB">
+                            <input type="date" id="DOB" name="DOB">
                         </div>
                         <div>
-                            <button type="button" class="medium-button">Submit</button>
+                            <button type="button" id="btn-submit" class="medium-button">Submit</button>
                         </div>
                     </form>
                 </div>
                 <!-- end of dob-check-form -->
             </section>
+            <?php 
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                
+                //check if the given DOB is correct
+                $db = new Database();
+                $stm = "SELECT * FROM Users WHERE 
+                    Password = :Password AND
+                    Email = :Email AND
+                    DOB = :DOB
+                ;";
+                $db->query($stm);
+                $db->bind(':Password', $_REQUEST['uchk']);
+                $db->bind(':Email', $_REQUEST['Email']);
+                $db->bind(':DOB', $_REQUEST['DOB']);
+                $rowCount = $db->rowCount();
+            } ?>
+
+            <?php if ($rowCount == 1): ?> 
+            <!-- this form will only show when the form is submitted properly!-->
+            <section id="pswd-reset-form">
+                <div class="form">
+                    <div>
+                        <input type="password" id="password" placeholder="Enter New Password">
+                    </div>
+                    <div>
+                        <input type="password" id="repassword" placeholder="Confirm Your Password" onblur="checkPasswords();">
+                    </div>
+                    <div>
+                        <button type="button" id="button-submit" class="medium-button" disabled>Updatet</button>
+                    </div>
+                </div>
+            </section>
+            
+            <?php endif;?>
             <section id="response"></section>
         </div>
         <!-- end of main-content -->
+        <footer></footer>
     </div>
     <!-- end of wrapper -->
 </body>
@@ -52,6 +87,19 @@ $(document).ready(function () {
     $.get("includes/footer.php", function (data) {
         $("footer").prepend(data);
     }); 
+
+    $("#btn-submit").on("click", function () {
+        var DOB = $("#DOB");
+        if (DOB.val() == "") {
+            var errorMsg = "<span style='color: red;'>Please input your date of birth!</span>";
+            $("#response").html(errorMsg);
+        }
+        else {
+            $(this).prop('type', 'submit');
+        }
+    });
+
+    //TODO need to write function to update password once the 2 inputs match.
 
 });
 </script>
