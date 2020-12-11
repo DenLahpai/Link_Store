@@ -14,7 +14,7 @@ require_once "../functions.php";
     <!-- end-of-nav-menu-left  -->
     <!-- nav-menu-middle      -->
     <div class="nav-menu-middle">
-       <div id="StoresName"></div>
+      
     </div>
     <!-- end of nav-menu-middle  -->
     <!-- nav-menu-right  -->

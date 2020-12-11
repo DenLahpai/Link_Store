@@ -160,10 +160,10 @@ function checkSession () {
             // zero is returned as session is not set
             window.location.href = "index.html";
             var errorMsg = "<span style='color: red;'>Session Expired! Please login again!</span>"
-            $("#response").html(errorMsg)
+            $("#response").html(errorMsg);
         }
         else {
-            $("#StoresName").html(data);
+            $(".nav-menu-middle").html(data);
         }
     }
     );

@@ -186,6 +186,32 @@ header {
     padding: 6px;
 }
 
+/****** Styles for sub-menu ******/
+.sub-menu {
+    background: var(--color4);    
+    border-radius: 12px;
+    text-align: left;    
+}
+
+.sub-menu-contents {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-menu-content {
+    padding: 12px;
+    display: inline-flex;
+}
+
+.sub-menu-command {
+    color: white;
+    text-decoration: underline;
+}
+
+.sub-menu-search {
+    text-align: right;      
+}
+
 /****** Styles for buttons ******/
 
 .medium-button {

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <header></header>
+        <!-- main-content -->
+        <div class="main-content">
+            <section id="page_title">
+                <h1>Products</h1>
+            </section>
+            <section id="sub-menu-products">
+                <!-- sub-menu -->
+                <div class="sub-menu">
+                    <!-- sub-menu-contents -->
+                    <div class="sub-menu-contents">
+                        <!-- sub-menu-content -->
+                        <div class="sub-menu-content">
+                            <div class="sub-menu-command">
+                                <div>Create New</div>                               
+                            </div>
+                        </div>
+                        <!-- end of sub-menu-content -->
+                        <!-- sub-menu-content -->
+                        <div class="sub-menu-content">
+                            <!-- sub-menu-command       -->
+                            <div class="sub-menu-command">
+                                <select name="view" id="">
+                                    <option value="0">Grid View</option>
+                                    <option value="1">Table View (No pic)</option>
+                                </select>  
+                            </div>    
+                            <!-- end of sub-menu-command -->
+                        </div>
+                        <!-- end of sub-menu-content -->
+                        <!-- sub-menu-content -->
+                        <div class="sub-menu-content">
+                            <div class="sub-menu-search">
+                                <input type="text" placeholder="Search">
+                                <button class="small-square" style="color:silver;">S</button>
+                            </div>
+                        </div>
+                        <!-- end of sub-menu-content -->
+                    </div>
+                    <!-- end of sub-menu-contents -->
+                </div>
+                <!-- end of sub-menu -->
+            </section>
+            <section id="products"></section>    
+        </div>
+        <!-- end of main-content -->
+    </div>
+    <!-- end of wrapper -->
+</body>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/scripts.js"></script>
+<script>
+$(document).ready(function () {
+    //function to get head
+    $.get("includes/head.html", function (data) {
+        $("head").prepend(data);
+    });
+
+    //function to get header (menu-bar)
+    $.get("includes/header.php", function (data){
+        $("header").prepend(data);
+    });
+
+    // function to include footer
+    $.get("includes/footer.php", function (data) {
+        $("footer").prepend(data);
+    });
+
+    //function to check session 
+    checkSession ();
+
+    setInterval(function() {
+        checkSession();
+    }, 1800000);
+});
+</script>
+</html>

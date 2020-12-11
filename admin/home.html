@@ -15,6 +15,7 @@
             <section id="modules">
                 <!-- module-cards-container -->
                 <div class="module-cards-container">
+
                     <!-- module-card -->
                     <div class="module-card">
                         <div class="module-card-header">
@@ -27,7 +28,7 @@
                             </div>
                         </div>
                         <div class="module-card-bottom">
-                            <button type="button" class="medium-button">Go Now!</button>
+                            <button type="button" class="medium-button" onclick="window.location.href='products.html';">Go Now!</button>
                         </div>
                     </div>
                     <!-- end of module-card -->
@@ -35,20 +36,18 @@
                     <!-- module-card -->
                     <div class="module-card">
                         <div class="module-card-header">
-                            <h3>Product</h3>
+                            <h3>Orders</h3>
                         </div>
                         <div class="module-card-desc">
                             <div>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque deleniti quam natus voluptatem praesentium distinctio accusamus harum ullam nulla doloremque, ea fugiat maiores dolores quia et earum saepe enim similique. 
+                                This module allows you to manage orders from your online clients.
                             </div>
                         </div>
                         <div class="module-card-bottom">
                             <button type="button" class="medium-button">Go Now!</button>
                         </div>
                     </div>
-                    <!-- end of module-card -->
-
-                    
+                    <!-- end of module-card -->                    
                 </div>
                 <!-- end of module-cards-container  -->
             </section>
@@ -79,7 +78,7 @@ $(document).ready(function () {
 
     //function to check session 
     checkSession ();
-    
+
     setInterval(function() {
         checkSession();
     }, 1800000);
