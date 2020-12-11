@@ -151,5 +151,21 @@ function updatePassword () {
         errorMsg = "<span style='color: red;'>The two passwords do NOT match!</span>";
         $("#response").html(errorMsg);
     }
+}
 
+/***** function to check if there is a session ******/
+function checkSession () {
+    $.post ("includes/check_session.php", function (data) {
+        if (data == 0) {
+            // zero is returned as session is not set
+            window.location.href = "index.html";
+            var errorMsg = "<span style='color: red;'>Session Expired! Please login again!</span>"
+            $("#response").html(errorMsg)
+        }
+        else {
+            $("#StoresName").html(data);
+        }
+    }
+    );
+    
 }
