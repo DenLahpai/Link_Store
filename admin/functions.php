@@ -25,6 +25,25 @@ function table_Users ($job, $var1, $var2, $var3, $sorting, $limit) {
             $db->bind(':var2', $var2);
             return $db->resultset(); 
             break;
+
+        case 'reset_password':
+            $stm = "UPDATE Users SET Password = :Password WHERE
+                Email = :Email AND
+                DOB = :DOB
+            ;";    
+            $db->query($stm);
+            $db->bind(':Password', md5($_REQUEST['Password']));
+            $db->bind(':Email', $_REQUEST['Email']);
+            $db->bind(':DOB', $_REQUEST['DOB']);
+            if ($db->execute()) {
+                $msg = "Your password has been updated successfully! Please <a href='index.html'>login</a> with your new password!";
+                return $msg;
+            }
+            else {
+                $msg = "<span style='color: red;'>There was a connection problem! Please try again!</span>";
+                return $msg;
+            }
+            break;    
         
         default:
             # code...

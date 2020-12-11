@@ -24,7 +24,10 @@ $rowCount = 0;
                             Please enter your Date of Birth:
                         </div>
                         <div>
-                            <input type="date" id="DOB" name="DOB">
+                            <input type="hidden" id="Email" value="<? echo $_REQUEST['Email']; ?>">
+                        </div>
+                        <div>
+                            <input type="date" id="DOB" name="DOB" value="<? if(isset($_REQUEST['DOB'])) { echo $_REQUEST['DOB'];}?>">
                         </div>
                         <div>
                             <button type="button" id="btn-submit" class="medium-button">Submit</button>
@@ -61,9 +64,13 @@ $rowCount = 0;
                         <input type="password" id="repassword" placeholder="Confirm Your Password" onblur="checkPasswords();">
                     </div>
                     <div>
-                        <button type="button" id="button-submit" class="medium-button" disabled>Updatet</button>
+                        <button type="button" id="button-submit" class="medium-button" onclick="updatePassword();" disabled>Update</button>
                     </div>
                 </div>
+            </section>
+            <?php else: ?>
+            <section>
+                <div style="color: red;">We could not find your account! Please ensure that your date of birth is correct!</div>
             </section>
             
             <?php endif;?>

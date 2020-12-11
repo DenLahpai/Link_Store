@@ -128,3 +128,28 @@ function checkPasswords () {
         $("#response").html(errorMsg);
     }
 }
+
+/***** function to update password match ******/
+function updatePassword () {
+    var password = $("#password");
+    var repassword = $("#repassword");
+    var DOB = $("#DOB");
+    var Email = $("#Email");
+
+    if (password.val() === repassword.val()) {
+        $.post("includes/update_password.php", {
+            Password: password.val(),
+            Email: Email.val(),
+            DOB: DOB.val()
+            }, function (data) {
+                $("#response").html(data);
+            }
+        
+        );
+    }
+    else {
+        errorMsg = "<span style='color: red;'>The two passwords do NOT match!</span>";
+        $("#response").html(errorMsg);
+    }
+
+}

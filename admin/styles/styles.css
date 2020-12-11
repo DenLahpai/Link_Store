@@ -183,12 +183,12 @@ header {
 
 .module-card-bottom {
     color: white;
+    padding: 6px;
 }
 
 /****** Styles for buttons ******/
 
 .medium-button {
-    margin: 6px;
     padding: 12px 18px;
 }
 
@@ -209,6 +209,7 @@ footer {
     padding: 1rem;
     text-align: center;
     background: white;
+    border-top: 1px solid var(--color5);
 }
 
 .large-button {
