@@ -29,7 +29,7 @@ require_once "../functions.php";
  <!-- main-menu  -->
  <div class="main-menu">
     <div>
-        <button class="large-button">Home</button>        
+        <button class="large-button" onclick="window.location.href='home.html';">Home</button>        
     </div>
     <div>
         <button class="large-button" onclick="window.location.href='logout.php';">Logout</button>
