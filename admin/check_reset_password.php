@@ -1,6 +1,6 @@
 <?php
 require_once "functions.php";
-$rowCount = 0;
+$rowCount = 3;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,11 +68,14 @@ $rowCount = 0;
                     </div>
                 </div>
             </section>
-            <?php else: ?>
+            <?php elseif ($rowCount == 0): ?>
             <section>
                 <div style="color: red;">We could not find your account! Please ensure that your date of birth is correct!</div>
             </section>
-            
+            <?php else:?>
+            <section>
+                <div;">Please enter your date of birth!</div>
+            </section>        
             <?php endif;?>
             <section id="response"></section>
         </div>

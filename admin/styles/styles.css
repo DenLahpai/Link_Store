@@ -1,9 +1,9 @@
 :root {
-    --color1: #EBECED;
-    --color2: #46AAEC;
-    --color3: #EEE2DC;
-    --color4: #41B3A3;
-    --color5: rgba(235, 150, 5, 1);
+    --color1: rgba(235, 236, 237, 1);
+    --color2: rgba(243, 246, 255, 1);
+    --color3: rgba(0, 104, 255, 1);
+    --color4: rgba(36, 36, 58, 1);
+    --color5: rgba(162, 169, 203, 1);
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 
 .wrapper {
-    background: var(--color1);
+    background: var(--color2);
 }
 
 .main-content {
@@ -33,8 +33,10 @@ section {
 
 .login-form-contents {
     text-align: center;
-    border: 1px solid white;
+    background: var(--color3);
     place-items: center;
+    padding: 18px;
+    border-radius: 24px;
 }
 
 .login-form-content {
@@ -43,26 +45,31 @@ section {
 
 .login-form-content input {
     padding: 6px;
-    background: none;
+    border: 0px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    background-color: var(--color3);  
 }
 
-.login-form-content input:focus{
-    background: white;
+.login-form-content input::placeholder {
+    color: #FFFFFF;
+    font-style: italic;
+}
+
+.login-form-content input:focus {
+    color: var(--color3);
+    background: #FFFFFF;
 }
 
 .login-form-content button {
     width: 100%;
-    padding: 9px;
-    background-color: var(--color2);
-    color: white;
-    font-weight: bold;
-    /* border: 1px solid white; */
+    padding: 9px;        
 }
 
 /****** Styles for header ******/
 
 header {
-    background: var(--color2);
+    background: var(--color1);
     width: 100%;
 }
 
@@ -71,7 +78,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid gold;
+    border-bottom: 1px solid var(--color1);
 }
 
 .nav-menu-left {
@@ -79,22 +86,22 @@ header {
 }
 
 .hamburger {
-    padding: 6px;
-    border-radius: 6px;
-    background: var(--color4);
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--color3);
 }
 
 .hamburger div {
-    width: 42px;
-    height: 9px;
-    background: white;
+    width: 24px;
+    height: 3px;
+    background: #FFFFFF;
     margin: 6px 0px;
 }
 
 .nav-menu-middle {
     padding: 3px;
     text-align: left;
-    color: white;
+    font-size: 1.2em;    
 }
 
 .nav-menu-right {
@@ -102,18 +109,27 @@ header {
 }
 
 #settings {
-    font-size: 2em;
-    color: white;
+    font-size: 2em;    
 }
 
 .main-menu {
     display: none;
     padding: 12px;
-    text-align: center;    
+    text-align: center;
+    background: var(--color3);    
 }
 
 .main-menu > div {
     margin: 24px;
+}
+
+.main-menu > div > button {
+    background: #FFFFFF;
+    box-shadow: 6px 9px 18px rgba(136, 136, 136, 0.6);
+    font-weight: bold;
+    font-size: 1.5em;
+    border: 1px solid var(--color5);
+    border-radius: 12px;
 }
 
 .setting-menu {
@@ -126,29 +142,33 @@ header {
 .setting-menu > ul li {
     list-style: none;
     padding: 3px;
-    border: 1px solid var(--color4);
+    border: 1px solid var(--color1);
     border-top: 0px;
 }
 
 .setting-menu > ul li a {
-    color: black;
+    color: #FFFFFF;
     text-decoration: none;
 }
 
 #page_title {
     margin: 12px;
     margin-bottom: 36px;
+    text-align: left;
 }
 
 #page_title > h1 {
     padding: 6px 12px;
-    background: var(--color5);
+    color: var(--color5);
     display: inline;
-    border-radius: 6px;
-    color: white;
+    border-radius: 6px;    
 }
 
 .form > div {
+    margin: 9px;
+}
+
+.form > form > div {
     margin: 9px;
 }
 
@@ -163,8 +183,7 @@ header {
 }
 
 .module-card {
-    background: var(--color3);
-    border: 1px solid var(--color2);
+    border: 1px solid black;
     border-radius: 3px;
     display: flex;
     flex-direction: column;
@@ -172,17 +191,17 @@ header {
 }
 
 .module-card-header {
-    background: var(--color2);
-    color: white;
+    
 }
 
 .module-card-desc {
+    background: var(--color1);
     padding: 3px;
     text-align: left;
 }
 
 .module-card-bottom {
-    color: white;
+    color: #FFFFFF;
     padding: 6px;
 }
 
@@ -190,7 +209,8 @@ header {
 .sub-menu {
     background: var(--color4);    
     border-radius: 12px;
-    text-align: left;    
+    text-align: left;
+    max-width: 100%;    
 }
 
 .sub-menu-contents {
@@ -203,20 +223,14 @@ header {
     display: inline-flex;
 }
 
-.sub-menu-command {
-    color: white;
-    
-}
-
-.sub-menu-command > div {
-    border: 1px solid white;
-    border-radius: 3px;
-    padding: 3px 12px;
-    background: var(--color2);
-}
-
 .sub-menu-search {
     text-align: right;      
+}
+
+.sub-menu-search > input {
+    border: 0px;
+    border-bottom: 1px solid #FFFFFF;
+    background: var(--color4);
 }
 
 /****** Styles for buttons ******/
@@ -241,7 +255,7 @@ footer {
     left: 0;
     padding: 1rem;
     text-align: center;
-    background: white;
+    background: #FFFFFF;
     border-top: 1px solid var(--color5);
 }
 
