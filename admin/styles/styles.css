@@ -15,12 +15,8 @@
     background: var(--color2);
 }
 
-.main-content {
-    padding: 12px;
-}
-
 section {
-    margin: 3px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -86,17 +82,18 @@ header {
 }
 
 .hamburger {
-    padding: 12px;
-    border-radius: 50%;
+    padding: 6px;
+    border-radius: 3px;
     background: var(--color3);
+    font-size: 2em;
+    color: #FFFFFF;
+    text-align: center;
+    box-shadow: 6px 6px 6px rgba(136, 136, 136, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hamburger div {
-    width: 24px;
-    height: 3px;
-    background: #FFFFFF;
-    margin: 6px 0px;
-}
 
 .nav-menu-middle {
     padding: 3px;
@@ -136,32 +133,46 @@ header {
     display: none;
     position: fixed;
     right: 0;
-    background: var(--color3);
+    background: #FFFFFF;
+    z-index: 1;
 }
 
 .setting-menu > ul li {
     list-style: none;
-    padding: 3px;
-    border: 1px solid var(--color1);
+    padding: 15px;
+    border: 1px solid #FFFFFF;
     border-top: 0px;
-}
-
-.setting-menu > ul li a {
+    background-color: var(--color3);
     color: #FFFFFF;
-    text-decoration: none;
 }
 
 #page_title {
-    margin: 12px;
-    margin-bottom: 36px;
     text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
-#page_title > h1 {
-    padding: 6px 12px;
-    color: var(--color5);
-    display: inline;
-    border-radius: 6px;    
+#search_form {
+    border-top: 1px solid var(--color4);
+    display: none;   
+}
+
+#search_form > div {
+    text-align: right;
+    margin-top: 12px;
+}
+
+#search_form > div > input {
+    border: 0px;
+    border-bottom: 1px solid var(--color3);
+    background: var(--color2);
+    outline: 0px;
+    font-size: 1.2em;
+}
+
+#sorting_form {
+    display: none;
+    border-top: 1px solid black;    
 }
 
 .form > div {
@@ -183,21 +194,53 @@ header {
 }
 
 .module-card {
-    border: 1px solid black;
-    border-radius: 3px;
+    /* border: 1px solid #FFFFFF; */
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 12px;      
 }
 
-.module-card-header {
-    
+.module-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.module-card-desc {
-    background: var(--color1);
-    padding: 3px;
+.module-card-body-contents {
     text-align: left;
+    margin: 3px 6px;
+}
+
+.module-card-title > h2 {
+    text-align: center;
+}
+
+.module-card-title > div {
+    text-align: center;
+    font-size: 3em;
+}
+
+.row-counts {
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+    padding: 3px;
+    background:#FFFFFF;
+    font-size: 1.8em;
+    border-radius: 18px;
+    color: black;
+    border: 0px;
+    position: relative;    
+}
+
+.row-counts p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .module-card-bottom {
@@ -205,38 +248,41 @@ header {
     padding: 6px;
 }
 
-/****** Styles for sub-menu ******/
-.sub-menu {
-    background: var(--color4);    
-    border-radius: 12px;
-    text-align: left;
-    max-width: 100%;    
+#module-brands {
+    background-color: var(--color3);
+    color: #FFFFFF;        
 }
 
-.sub-menu-contents {
-    display: flex;
-    justify-content: space-between;
+#module-products {
+    background-color: rgba(207, 117, 255, 1);
+    color: #FFFFFF;
 }
 
-.sub-menu-content {
-    padding: 12px;
-    display: inline-flex;
-}
-
-.sub-menu-search {
-    text-align: right;      
-}
-
-.sub-menu-search > input {
-    border: 0px;
-    border-bottom: 1px solid #FFFFFF;
-    background: var(--color4);
+#module-orders {
+    background-color: rgba(250, 219, 57, 1);
+    color: var(--color4);
 }
 
 /****** Styles for buttons ******/
 
+.large-button {
+    width: 90%;
+    padding: 12px;
+}
+
 .medium-button {
     padding: 12px 18px;
+}
+
+.round-button {
+    height: 42px;
+    width: 42px;
+    border: 0px;
+    padding: 3px 12px;
+    margin-left: 18px;
+    font-size: 1.5em;    
+    font-weight: bold;
+    border-radius: 50%;     
 }
 
 /****** Styles for input fields ******/
@@ -248,6 +294,8 @@ header {
     text-align: center;
 }
 
+/****** Misc styles ******/
+
 /****** Styles for footer ******/
 footer {
     right: 0;
@@ -257,11 +305,6 @@ footer {
     text-align: center;
     background: #FFFFFF;
     border-top: 1px solid var(--color5);
-}
-
-.large-button {
-    width: 90%;
-    padding: 12px;
 }
 
 

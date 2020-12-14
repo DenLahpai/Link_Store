@@ -2,6 +2,12 @@
 <html lang="en">
 <head>
     <title>Brands</title>
+    <style>
+        .round-button {
+            background-color: var(--color3);
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
     <!-- wrapper -->
@@ -11,36 +17,26 @@
         <div class="main-content">
             <section id="page_title">
                 <h1>Brands</h1>
-            </section>
-            <section id="sub-menu-brands">
-                <!-- sub-menu -->
-                <div class="sub-menu">
-                    <!-- sub-menu-contents -->
-                    <div class="sub-menu-contents">                       
-                        <!-- sub-menu-content -->
-                        <div class="sub-menu-content">
-                            <!-- sub-menu-command       -->
-                            <div class="sub-menu-command">
-                                <select name="view" id="">
-                                    <option value="0">Grid View</option>
-                                    <option value="1">Table View</option>
-                                </select>  
-                            </div>    
-                            <!-- end of sub-menu-command -->
-                        </div>
-                        <!-- end of sub-menu-content -->
-                        <!-- sub-menu-content -->
-                        <div class="sub-menu-content">
-                            <div class="sub-menu-search">
-                                <input type="text" placeholder="Search"><button class="small-square" style="color:rgb(239, 239, 239);;">Sc</button>
-                            </div>
-                        </div>
-                        <!-- end of sub-menu-content -->                        
-                    </div>
-                    <!-- end of sub-menu-contents -->
+                <div>
+                    <button class="round-button">+</button>
+                    <button class="round-button" onclick="Toggle('#search_form');">&#9906</button>
+                    <button class="round-button" onclick="Toggle('#sorting_form')">&#8693</button>                                  
                 </div>
-                <!-- end of sub-menu -->
             </section>
+            <section id="sorting_form">
+                <div>
+                    Sorting: 
+                    <select name="Sorting" id="Sorting">
+                        <option value="ORDER BY BrandsName ASC">Brands Name A &#8645; Z</option>
+                        <option value="ORDER BY BrandsName DESC">Brands Name Z &#8645; A</option>
+                        <option value="ORBER BY Created ASC">Create 1 &#8645; 9</option>
+                        <option value="ORDER BY Created DESC">Create 9 &#8645; 1</option>
+                    </select>
+                </div>
+            </section>
+            <section id="main-data"></section>
+            <section id="pagination">
+            </section>              
         </div>
         <!-- end of main-content -->
     </div>
@@ -60,10 +56,17 @@ $(document).ready(function () {
         $("header").prepend(data);
     });
 
+    $.get("includes/search_form.html", function (data) {
+        $("#page_title").after(data);
+    })
+
     // function to include footer
     $.get("includes/footer.php", function (data) {
         $("footer").prepend(data);
     });
+
+    getRowCount ('Brands');
+    pagination ('Brands');
 
     //function to check session 
     checkSession ();

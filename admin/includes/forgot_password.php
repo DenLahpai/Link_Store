@@ -43,4 +43,5 @@ else {
     // meaing the email and mobiles provided are not found in the database
     echo "<span style='color: red;'>We could not find your account with the information you have provided! <br> Please contact your software vendor!</span>";
 }
+$db = NULL;
 ?>

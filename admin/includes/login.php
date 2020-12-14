@@ -27,5 +27,6 @@ if ($rowCount == 0) {
     // Two is returned for wrong username, password or store code...
     echo 2;
 }
+$db = NULL;
 
 ?>

@@ -2,7 +2,7 @@
 require_once "handler.php";
 
 //function to use data from the table Users 
-function table_Users ($job, $var1, $var2, $var3, $sorting, $limit) {
+function table_Users ($job, $var1, $var2, $var3, $order, $limit) {
     $db = new Database();
     switch ($job) {
         case 'check_with_two_param':
@@ -45,6 +45,31 @@ function table_Users ($job, $var1, $var2, $var3, $sorting, $limit) {
             }
             break;    
         
+        default:
+            # code...
+            break;
+    }
+    $db = NULL;
+}
+
+//function to use data from the table Brands 
+function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
+    $db = new Database();
+
+    switch ($job) {
+        case 'select_all':
+            # code...
+            $stm = "SELECT * FROM Brands $sorting LIMIT $limit OFFSET $offset ;";
+            $db->query($stm);
+            if ($db->execute()) {
+                return $db->resultset();
+            }
+            else {
+                $msg = 'error';
+                return $msg;
+            }
+            break;
+                
         default:
             # code...
             break;

@@ -155,17 +155,62 @@ function updatePassword () {
 
 /***** function to check if there is a session ******/
 function checkSession () {
-    $.post ("includes/check_session.php", function (data) {
-        if (data == 0) {
-            // zero is returned as session is not set
-            window.location.href = "index.html";
-            var errorMsg = "<span style='color: red;'>Session Expired! Please login again!</span>"
-            $("#response").html(errorMsg);
+    $.post ("includes/check_session.php", 
+        function (data) {
+            if (data == 0) {
+                // zero is returned as session is not set
+                window.location.href = "index.html";
+                var errorMsg = "<span style='color: red;'>Session Expired! Please login again!</span>"
+                $("#response").html(errorMsg);
+            }
+            else {
+                $(".nav-menu-middle").html(data);
+            }
         }
-        else {
-            $(".nav-menu-middle").html(data);
+    );    
+}
+
+/***** function to get row counts for the modules page ******/
+function getRowCount (table) {
+    $.post ("includes/row_count.php", {
+            Table: table
+        }, function (data) {
+            $("#" + table + "RowCount").html(data);
         }
-    }
-    );
     
+    );
+}
+
+/****** function to get data from the table  ******/
+function selectRows (source, target) {
+    var order = $("#order");
+    var limit = $("#limit");
+    var offset = $("#offset");
+    var search = $("#search");
+    $.post(source, {
+        order: order.val(),
+        limit: limit.val(),
+        offset: offset.html(),
+        search: search.val()
+        }, function (data) {
+            $(target).html(data);
+        }
+
+    );
+}
+
+/****** function to get data from the table  ******/
+function pagination (table) {
+    var limit = 10;
+    $.post("includes/row_count.php", {  
+        Table: table
+        }, function (data) {
+            var numRows = data;
+            
+            //calculating number of pages
+            var numPages = Math.ceil(numRows / limit);
+            alert(numPages);
+        }
+    
+    );
 }

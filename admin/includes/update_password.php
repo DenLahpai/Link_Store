@@ -7,4 +7,5 @@ if (isset($_REQUEST['Password'])) {
 else {
     echo "<span style='color: red;'>There was an error! Please try again!</span>";
 }
+
 ?>

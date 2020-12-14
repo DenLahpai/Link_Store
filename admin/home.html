@@ -16,52 +16,115 @@
                 <!-- module-cards-container -->
                 <div class="module-cards-container">
                     <!-- module-card -->
-                    <div class="module-card">
-                        <div class="module-card-header">
-                            <h3>Brands</h3>
+                    <div class="module-card" id="module-brands" onclick="window.location.href='brands.html';">
+                        <!-- module-card-body -->
+                        <div class="module-card-body">
+                            <!-- module-card-body-content  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-title">
+                                    <h2>Brands</h2>
+                                    <div>&#9934</div>
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-body-contents-desc">
+                                    <h3>Start by adding the brands of your products...</h3>
+                                    <div>
+                                        Before adding your products, ensure that the brand is in palce.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents-count">
+                                <div class="row-counts">
+                                    <p id="BrandsRowCount"></p>
+                                </div>
+                                <div>
+                                    Entries
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents -->
                         </div>
-                        <div class="module-card-desc">
-                            <div>
-                                Let's start here! In order to create your products, you need to start by setting up the brands of the products that you are selling.                             </div>
-                        </div>
-                        <div class="module-card-bottom">
-                            <button type="button" class="medium-button" onclick="window.location.href='brands.html';">Go Now!</button>
-                        </div>
+                        <!-- end of module-card-body -->
                     </div>
                     <!-- end of module-card -->
 
                     <!-- module-card -->
-                    <div class="module-card">
-                        <div class="module-card-header">
-                            <h3>Products</h3>
-                        </div>
-                        <div class="module-card-desc">
-                            <div>
-                                This module will allow you to add new products to your online store. 
-                                Once your products are in the database, you can edit them.
+                    <div class="module-card" id="module-products">
+                        <!-- module-card-body -->
+                        <div class="module-card-body">
+                            <!-- module-card-body-content  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-title">
+                                    <h2>Products</h2>
+                                    <div style="color: black;">&#9917</div>
+                                </div>
                             </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-body-contents-desc">
+                                    <h3>Customize your products, here!</h3>
+                                    <div>
+                                        Add your products to the database and display them in your online store.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents-count">
+                                <div class="row-counts">
+                                    <p id="ProductsRowCount"></p>
+                                </div>
+                                <div>
+                                    Entries
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents -->
                         </div>
-                        <div class="module-card-bottom">
-                            <button type="button" class="medium-button" onclick="window.location.href='products.html';">Go Now!</button>
+                        <!-- end of module-card-body -->
+                    </div>
+                    <!-- end of module-card --> 
+                    
+                    <!-- module-card -->
+                    <div class="module-card" id="module-orders">
+                        <!-- module-card-body -->
+                        <div class="module-card-body">
+                            <!-- module-card-body-content  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-title">
+                                    <h2>Orders</h2>
+                                    <div>&#9782</div>
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents">
+                                <div class="module-card-body-contents-desc">
+                                    <h3>Manage your clients orders.</h3>
+                                    <div>
+                                        View the orders received from your online store. Keep track of the deliveries and payments. 
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents  -->
+                            <!-- module-card-body-contents  -->
+                            <div class="module-card-body-contents-count">
+                                <div class="row-counts">
+                                    <p id="OrdersRowCount"></p>
+                                </div>
+                                <div>
+                                    Entries
+                                </div>
+                            </div>
+                            <!-- end of module-card-body-contents -->
                         </div>
+                        <!-- end of module-card-body -->
                     </div>
                     <!-- end of module-card -->
-
-                    <!-- module-card -->
-                    <div class="module-card">
-                        <div class="module-card-header">
-                            <h3>Orders</h3>
-                        </div>
-                        <div class="module-card-desc">
-                            <div>
-                                This module allows you to manage orders from your online clients.
-                            </div>
-                        </div>
-                        <div class="module-card-bottom">
-                            <button type="button" class="medium-button">Go Now!</button>
-                        </div>
-                    </div>
-                    <!-- end of module-card -->                    
                 </div>
                 <!-- end of module-cards-container  -->
             </section>
@@ -96,6 +159,11 @@ $(document).ready(function () {
     setInterval(function() {
         checkSession();
     }, 1800000);
+
+    //getting number of rows from tables
+    getRowCount('Brands');
+    getRowCount('Products')
+    
 });
 </script>
 </html>

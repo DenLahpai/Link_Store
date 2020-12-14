@@ -6,9 +6,7 @@ require_once "../functions.php";
     <!-- nav-menu-left  -->
     <div class="nav-menu-left">
         <div class="hamburger" onclick="Toggle ('.main-menu')">
-            <div class="hambruger-content"></div>
-            <div class="hamburger-content"></div>
-            <div class="hamburger-content"></div>
+            <p>&#9776;</p>
         </div>
     </div>
     <!-- end-of-nav-menu-left  -->
@@ -39,8 +37,8 @@ require_once "../functions.php";
 <!-- setting-menu  -->
 <div class="setting-menu">
     <ul>
-        <li><a href="change_password.html">Change Password</a></li>
-        <li><a href="my_info.html">My Info</a></li>
+        <li>Change Password</li>
+        <li>My Info</li>
     </ul>
 </div>
 <!-- end of setting menu  -->

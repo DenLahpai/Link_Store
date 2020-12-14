@@ -51,6 +51,7 @@ $rowCount = 3;
                 $db->bind(':Email', $_REQUEST['Email']);
                 $db->bind(':DOB', $_REQUEST['DOB']);
                 $rowCount = $db->rowCount();
+                $db = NULL;
             } ?>
 
             <?php if ($rowCount == 1): ?> 
