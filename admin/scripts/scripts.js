@@ -212,6 +212,8 @@ function pagination (table) {
         var source = "search_row_count.php";
     }
 
+    getData(table);
+
     $.post("includes/" + source, {  
         Table: table,
         Search: Search
@@ -280,16 +282,11 @@ function pagination (table) {
         }    
     );
     //getting data
-    getData("Brands");
 }
 
 function changeCurrentPage (num, table) {
     $("#current_page").val(num);
-    pagination(table); 
-    var Search = $("#Search").val();
-    if (Search == "") {
-    
-    }   
+    pagination(table);      
 }
 
 function previousPage (table) {
@@ -297,20 +294,13 @@ function previousPage (table) {
     var new_page = page - 1;
     $("#current_page").val(new_page);
     pagination (table);  
-    var Search = $("#Search").val();
-    if (Search == "") {
-       
-    }  
 }
 
 function nextPage (table) {
     var page = Number($("#current_page").val());
     var new_page = page + 1;
     $("#current_page").val(new_page);
-    pagination (table);  var Search = $("#Search").val();
-    if (Search == "") {
-        
-    }  
+    pagination (table);
 }
 
 
@@ -319,5 +309,19 @@ function getData(table){
     var Search = $("#Search").val();
     var page = $("#current_page").val();
     var order = $("#order").val();
+    if (!Search || Search == "" || Search == null) {
+        var source = "select_Brands.php";
+    } 
+    else {
+        var source = "search_Brands.php";
+    }
+    $.post("includes/" + source, {
+        Search: Search,
+        page: page,
+        order: order
+        }, function (data) {
+
+        }
     
+    );
 }

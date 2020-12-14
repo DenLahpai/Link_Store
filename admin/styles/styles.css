@@ -263,6 +263,35 @@ header {
     color: var(--color4);
 }
 
+/****** Styles for pagination ******/
+.pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pages > input {
+    margin-right: 12px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    padding: 9px;
+    border: 0;
+    width: 30px;  
+    border-radius: 6px;    
+}
+
+/****** Styles for footer ******/
+footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    background: #FFFFFF;
+    border-top: 1px solid var(--color5);
+}
+
 /****** Styles for buttons ******/
 
 .large-button {
@@ -290,23 +319,12 @@ header {
     background-color: red;
 }
 
-#response {
-    text-align: center;
-}
 
 /****** Misc styles ******/
 
-/****** Styles for footer ******/
-footer {
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
+#response {
     text-align: center;
-    background: #FFFFFF;
-    border-top: 1px solid var(--color5);
 }
-
 
 /*styles for tablets*/
 @media screen and (min-width: 768px) {
