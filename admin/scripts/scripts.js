@@ -201,16 +201,123 @@ function selectRows (source, target) {
 
 /****** function to get data from the table  ******/
 function pagination (table) {
-    var limit = 10;
-    $.post("includes/row_count.php", {  
-        Table: table
+    var limit = 10;    
+    var page = Number($("#current_page").val());
+    var Search = $("#Search").val();
+
+    if (!Search) {
+        var source = "row_count.php";
+    }    
+    else {
+        var source = "search_row_count.php";
+    }
+
+    $.post("includes/" + source, {  
+        Table: table,
+        Search: Search
         }, function (data) {
             var numRows = data;
-            
             //calculating number of pages
-            var numPages = Math.ceil(numRows / limit);
-            alert(numPages);
-        }
-    
+            // var totalPages = Math.ceil(numRows / limit);
+            var totalPages = 25;
+                     
+            if (page == 1) {
+                var page1 = Number(page);
+                var page2 = Number(page + 1);
+                var page3 = Number(page + 2);
+                var page4 = Number(page + 3);
+                var page5 = Number(page + 4);
+                var page6 = Number(page + 5);
+                //hiding previous button
+                $("#previous").hide();
+            }
+
+            else {
+                var page1 = Number(page - 1);
+                var page2 = Number(page);
+                var page3 = Number(page + 1);
+                var page4 = Number(page + 2);
+                var page5 = Number(page + 3);
+                var page6 = Number(page + 4);   
+                // showing previous button
+                $("#previous").show();             
+            } 
+
+            if (page == totalPages) {
+                //hiding next button
+                $("#next").hide();
+            }
+            else {
+                //showing next button
+                $("#next").show();
+            }
+
+            // setting up the page numbers
+            $("#page1").val(page1);
+            $("#page2").val(page2);
+            $("#page3").val(page3);
+            $("#page4").val(page4);
+            $("#page5").val(page5);
+            $("#page6").val(page6);
+
+            var i = 1;
+            while (i <= 6) {
+                var page_num = $("#page" + i).val();
+                if (page_num > totalPages) {
+                    $("#page" + i).hide();
+                }
+                else {
+                    $("#page" + i).show();  
+                }
+                if (page_num == page) {
+                    $("#page" + i).css({"background": "#FFFFFF", "color": "rgba(0, 104, 255, 1)"});                    
+                }
+                else {
+                    $("#page" + i).css({"background": "rgba(0, 104, 255, 1)", "color": "#FFFFFF"});
+                }
+                i++;
+            }           
+        }    
     );
+    //getting data
+    getData("Brands");
+}
+
+function changeCurrentPage (num, table) {
+    $("#current_page").val(num);
+    pagination(table); 
+    var Search = $("#Search").val();
+    if (Search == "") {
+    
+    }   
+}
+
+function previousPage (table) {
+    var page = Number($("#current_page").val());
+    var new_page = page - 1;
+    $("#current_page").val(new_page);
+    pagination (table);  
+    var Search = $("#Search").val();
+    if (Search == "") {
+       
+    }  
+}
+
+function nextPage (table) {
+    var page = Number($("#current_page").val());
+    var new_page = page + 1;
+    $("#current_page").val(new_page);
+    pagination (table);  var Search = $("#Search").val();
+    if (Search == "") {
+        
+    }  
+}
+
+
+/****** function to get data from the table  ******/
+function getData(table){
+    var Search = $("#Search").val();
+    var page = $("#current_page").val();
+    var order = $("#order").val();
+    
 }
