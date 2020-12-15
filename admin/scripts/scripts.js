@@ -356,29 +356,6 @@ function imagePreview(input) {
     }
 }
 
-
-// $.ajax({
-//     url: url,
-//     type: 'post',
-//     data: fdata,
-//     contentType: false,
-//     processData: false,
-//     success: function(data) {
-//         if (data == 0) {
-//             // zero is returned if there is no error!
-//             Toggle('new-post');
-//             // reloadPosts('select_posts.php');
-//             location.reload();
-//             alert('Your post has been uploaded successfully!');
-//         }
-//         else {
-//             // 1 us retured if there is an error!
-//             alert ("There was a connection error! Please try again!");
-//             reloadPosts('select_posts.php');
-//         }
-//     }
-// });
-
 /****** function to insert Brands ******/
 function insertBrands () {
     var BrandsName = $("#BrandsName");
@@ -396,11 +373,17 @@ function insertBrands () {
         $.ajax({
             // adding BrandsName and Country through the link
             url: "includes/add_Brands.php?BrandsName=" + BrandsName.val() + "&Country=" + Country.val(), 
+            type: 'post',
             data: fdata,
             contentType: false,
             processData: false,
             success: function (data) {
-                $("#response").html(data);
+                if (!data || data == "" || data == null) {
+                    window.location.href = 'brands.html';
+                }
+                else {
+                    $("#response").html(data);
+                }
             }
         });
     }
