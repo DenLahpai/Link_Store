@@ -286,7 +286,7 @@ function pagination (table) {
 
 function changeCurrentPage (num, table) {
     $("#current_page").val(num);
-    pagination(table);      
+    pagination(table);
 }
 
 function previousPage (table) {
@@ -320,8 +320,88 @@ function getData(table){
         page: page,
         order: order
         }, function (data) {
-
+            $("#main-data").html(data);
         }
     
     );
+}
+
+
+//function to dispaly preview of an image to be uploaded
+function imagePreview(input) {
+    if (input.files && input.files[0]) {
+        var img = document.getElementById('Image').files[0];
+        var imageName = img.name;
+        var imageExtension = imageName.split('.').pop().toLowerCase();
+        if(jQuery.inArray(imageExtension, ['jpg', 'jpeg', 'png']) == -1) {
+            alert("Invalid Image Type");
+            $("#btn-submit").attr('disabled', 'disabled');
+        }
+
+        else {
+            // $("#btn-submit").removeAttr('disabled');
+            var imagePv = new FileReader();
+            imagePv.onload = function (e) {
+                $("#image_preview").attr('src', e.target.result);                
+            };              
+        }
+
+        var imageSize = img.size;
+        if (imageSize > 12000000) {
+            alert("Image is too large!");
+            $("#btn-submit").attr('disabled', 'disabled');      
+        }
+        
+        imagePv.readAsDataURL(input.files[0]);   
+    }
+}
+
+
+// $.ajax({
+//     url: url,
+//     type: 'post',
+//     data: fdata,
+//     contentType: false,
+//     processData: false,
+//     success: function(data) {
+//         if (data == 0) {
+//             // zero is returned if there is no error!
+//             Toggle('new-post');
+//             // reloadPosts('select_posts.php');
+//             location.reload();
+//             alert('Your post has been uploaded successfully!');
+//         }
+//         else {
+//             // 1 us retured if there is an error!
+//             alert ("There was a connection error! Please try again!");
+//             reloadPosts('select_posts.php');
+//         }
+//     }
+// });
+
+/****** function to insert Brands ******/
+function insertBrands () {
+    var BrandsName = $("#BrandsName");
+    var Country = $("#Country");
+    if (!BrandsName.val() || BrandsName.val() == null || BrandsName.val() == "") {
+        var errorMsg = "<span style='color: red'>Please enter the brand's name!";
+        BrandsName.addClass('input-error');
+        $("#response").html(errorMsg);
+    }
+    else {
+        BrandsName.removeClass('input-error');
+        var fdata = new FormData();
+        var files = $("#Image")[0].files[0];
+        fdata.append('Image', files);
+        $.ajax({
+            // adding BrandsName and Country through the link
+            url: "includes/add_Brands.php?BrandsName=" + BrandsName.val() + "&Country=" + Country.val(), 
+            data: fdata,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                $("#response").html(data);
+            }
+        });
+    }
 }

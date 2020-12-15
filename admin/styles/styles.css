@@ -265,16 +265,18 @@ header {
 
 /****** Styles for pagination ******/
 .pages {
+    padding-top: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .pages > input {
     margin-right: 12px;
-    align-items: center;
+    align-items: center;    
     justify-content: center;
-    font-weight: bolder;
+    font-weight: bold;
     padding: 9px;
     border: 0;
     width: 30px;  
@@ -317,6 +319,10 @@ footer {
 /****** Styles for input fields ******/
 .input-error {
     background-color: red;
+}
+
+.image_preview img {
+    max-width: 90%;
 }
 
 

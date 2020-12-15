@@ -59,7 +59,7 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
     switch ($job) {
         case 'select_all':
             # code...
-            $stm = "SELECT * FROM Brands $sorting LIMIT $limit OFFSET $offset ;";
+            $stm = "SELECT * FROM Brands $order LIMIT $limit OFFSET $offset ;";
             $db->query($stm);
             if ($db->execute()) {
                 return $db->resultset();
@@ -69,6 +69,32 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
                 return $msg;
             }
             break;
+        
+        case 'row_count_before_insert':
+            #var1 = colum to check value
+            $stm = "SELECT * FROM Brands WHERE $var1 = :var1 ;";
+            $db->query($stm);
+            $db->bind(":var1", trim($_REQUEST["$var1"]));
+            return $db->rowCount();
+        
+        case 'insert':
+            # code...
+            $stm = "INSERT INTO Brands SET 
+                BrandsName = :BrandsName,
+                BrandsLink = :BrandsLink,
+                Country = :Country
+            ;";
+            $db->query($stm);
+            $db->bind(":BrandsName", trim($_REQUEST['BrandsName']));
+            $db->bind(":BrandsLink", md5(trim($_REQUEST['BrandsName'])));
+            $db->bind(":Country", trim($_REQUEST['Country']));
+            if ($db->execute()) {
+                return true;
+            }
+            else {
+                return "<span style='color: red'>There was a connection error! Please try again! </span>";
+            }
+            break;    
                 
         default:
             # code...
