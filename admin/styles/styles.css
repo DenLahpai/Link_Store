@@ -94,6 +94,10 @@ header {
     align-items: center;
 }
 
+.hamburger:active {
+    box-shadow: 3px 3px 3px rgba(136, 136, 136, 0.6);
+}
+
 .nav-menu-middle {
     padding: 3px;
     text-align: left;
@@ -355,6 +359,7 @@ footer {
     font-weight: bold;
     border-radius: 50%;     
 }
+
 
 /****** Styles for input fields ******/
 .input-error {
