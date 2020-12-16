@@ -98,6 +98,83 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
             }
             break;
 
+        case 'update_image':
+            # var1 = file_name
+            $stm = "UPDATE Brands SET 
+                Image = :var1 WHERE 
+                BrandsLink = :BrandsLink
+            ;";
+            $db->query($stm);
+            $db->bind(':var1', $var1);
+            $db->bind(':BrandsLink', $_REQUEST['link']);
+            if ($db->execute()) {
+                return true;
+            }
+            else {
+                return "<span style='color: red'>There was a connection error! Please try again! </span>";
+            }
+            break;
+            
+        case 'select_by_link':
+            # code...
+            $stm = "SELECT * FROM Brands WHERE BrandsLink = :BrandsLink ;";
+            $db->query($stm);
+            $db->bind(':BrandsLink', $_REQUEST['link']);
+            return $db->resultset();
+            break;
+
+        case 'check_before_update':
+            # code... 
+            $stm = "SELECT * FROM Brands WHERE 
+                BrandsName = :BrandsName AND
+                BrandsLink != :BrandsLink
+            ;";
+            $db->query($stm);
+            $db->bind(':BrandsName', trim($_REQUEST['BrandsName']));
+            $db->bind(':BrandsLink', $_REQUEST['link']);
+            return $db->rowCount();
+            break;
+            
+        case 'update':
+            # var1 = Image
+            $stm = "UPDATE Brands SET 
+                BrandsName = :BrandsName,
+                Country = :Country,
+                Image = :var1
+                WHERE BrandsLink = :BrandsLink
+            ;";
+            $db->query($stm);
+            $db->bind(':BrandsName', trim($_REQUEST['BrandsName']));
+            $db->bind(':Country', trim($_REQUEST['Country']));
+            $db->bind(':var1', $var1);
+            $db->bind(':BrandsLink', $_REQUEST['link']);
+            if ($db->execute()) {
+                return true;
+            }
+            else {
+                return "<span style='color: red'>There was a connection error! Please try again! </span>";
+            }
+            break;
+
+        case 'update_without_image':
+            # code...
+            $stm = "UPDATE Brands SET 
+                BrandsName = :BrandsName,
+                Country = :Country
+                WHERE BrandsLink = :BrandsLink
+            ;";
+            $db->query($stm);
+            $db->bind(':BrandsName', trim($_REQUEST['BrandsName']));
+            $db->bind(':Country', trim($_REQUEST['Country']));            
+            $db->bind(':BrandsLink', $_REQUEST['link']);
+            if ($db->execute()) {
+                return true;
+            }
+            else {
+                return "<span style='color: red'>There was a connection error! Please try again! </span>";
+            }
+            break;    
+
         default:
             # code...
             break;
@@ -105,9 +182,9 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
 }
 
 // function to create thumbnail
-function CreateThumbnail($pic,$thumb,$thumbwidth, $quality = 100) {
+function CreateThumbnail($pic, $thumb, $thumbwidth, $quality = 100) {
     $im1=ImageCreateFromJPEG($pic);
-
+    
     if(function_exists("exif_read_data")){
         $exif = exif_read_data($pic);
         if(!empty($exif['Orientation'])) {

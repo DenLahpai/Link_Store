@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .round-button {
+            background-color: var(--color3);
+            color: #FFFFFF;
+        }
+    </style>
+    <title>Update Brand</title>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <header></header>
+        <!-- main-content -->
+        <div class="main-content">
+            <section id="page_title">
+                <h1>Edit Brand</h1>
+                <div>
+                    <button class="round-button" onclick="window.location.href='add_Brands.html';">+</button>
+                    <button class="round-button" onclick="Toggle('#search_form');">&#9906;</button>
+                    <button class="round-button" onclick="Toggle('#sorting_form')">&#8693;</button>                                  
+                </div>
+            </section>
+            <section id="main-data"></section>
+            <section id="response"></section>
+        </div>
+        <!-- end of main-content  -->
+        <footer></footer>
+    </div>
+    <!-- end of wrapper -->
+</body>
+<script src="scripts/jquery.js"></script>
+<script src="scripts/scripts.js"></script>
+<script>
+$(document).ready(function () {
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const link = urlParams.get('link');
+
+    //function to get head
+    $.get("includes/head.html", function (data) {
+        $("head").prepend(data);
+    });
+
+    //function to get header (menu-bar)
+    $.get("includes/header.php", function (data){
+        $("header").prepend(data);
+    });
+    
+    //function to get the update_Brands form
+    $.get("includes/update_Brands.php", {
+        link: link
+        }, function (data) {
+            $("#main-data").html(data);
+        }
+    );
+
+    // function to include footer
+    $.get("includes/footer.php", function (data) {
+        $("footer").prepend(data);
+    });    
+
+    //function to check session 
+    checkSession ();
+
+    setInterval(function() {
+        checkSession();
+    }, 1800000);
+});
+</script>
+</html>

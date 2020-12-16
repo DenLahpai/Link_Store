@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>    
-    <title>Add Brands</title>
-    <style>
-        .round-button {
-            background-color: var(--color3);
-            color: #FFFFFF;
-        }
-    </style>
+<head>
+    <title>Update Logo</title>
 </head>
 <body>
     <!-- wrapper -->
@@ -16,22 +10,12 @@
         <!-- main-content -->
         <div class="main-content">
             <section id="page_title">
-                <h1>Brands</h1>
-                <div>
-                    <button class="round-button" onclick="window.location.href='add_Brands.html';">+</button>
-                    <button class="round-button" onclick="Toggle('#search_form');">&#9906</button>
-                    <button class="round-button" onclick="Toggle('#sorting_form')">&#8693</button>                                  
-                </div>
+                <h1>Update Logo</h1>
             </section>
             <section id="main-data">
+                <!-- form -->
                 <div class="form">
-                    <form id="post-form" method="post" action="includes/add_Brands.php" enctype="multipart/form-data">
-                        <div>
-                            <input type="text" id="BrandsName" placeholder="Brand's Name">
-                        </div>
-                        <div>
-                            <input type="text" id="Country" placeholder="Country of the brand">
-                        </div>
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div>
                             <label for="Image">Upload Image</label>
                             <input type="file" style="display: none;" name="Image" id="Image" onchange="imagePreview(this);">
@@ -40,10 +24,11 @@
                             <img id="image_preview">
                         </div>
                         <div>
-                            <button type="button" id="btn-submit" class="medium-button" onclick="insertBrands();">Submit</button>
-                        </div>                        
-                    </form>    
-                </div>                
+                            <button type="button" id="btn-submit" class="medium-button">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- end of form  -->
             </section>
             <section id="response"></section>
         </div>
@@ -56,6 +41,12 @@
 <script src="scripts/scripts.js"></script>
 <script>
 $(document).ready(function () {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const link = urlParams.get('link');
+    
+    $("#btn-submit").on('click', function () { updateImage( 'Brands', link);});
+
     //function to get head
     $.get("includes/head.html", function (data) {
         $("head").prepend(data);

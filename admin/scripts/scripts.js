@@ -326,7 +326,6 @@ function getData(table){
     );
 }
 
-
 //function to dispaly preview of an image to be uploaded
 function imagePreview(input) {
     if (input.files && input.files[0]) {
@@ -334,7 +333,7 @@ function imagePreview(input) {
         var imageName = img.name;
         var imageExtension = imageName.split('.').pop().toLowerCase();
         if(jQuery.inArray(imageExtension, ['jpg', 'jpeg', 'png']) == -1) {
-            alert("Invalid Image Type");
+            alert("Invalid Image Type! Only \".jpg & jpeg\" file types are allowed!");
             $("#btn-submit").attr('disabled', 'disabled');
         }
 
@@ -350,8 +349,7 @@ function imagePreview(input) {
         if (imageSize > 12000000) {
             alert("Image is too large!");
             $("#btn-submit").attr('disabled', 'disabled');      
-        }
-        
+        }        
         imagePv.readAsDataURL(input.files[0]);   
     }
 }
@@ -379,7 +377,7 @@ function insertBrands () {
             processData: false,
             success: function (data) {
                 if (!data || data == "" || data == null) {
-                    window.location.href = 'brands.html';
+                    window.location.href = 'Brands.html';
                 }
                 else {
                     $("#response").html(data);
@@ -387,4 +385,61 @@ function insertBrands () {
             }
         });
     }
+}
+
+/****** function to update Brands  ******/
+function updateBrands (link) {
+    var BrandsName = $("#BrandsName");
+    var Country = $("#Country");
+    if (!BrandsName.val() || BrandsName.val() == null || BrandsName.val() == "") {
+        var errorMsg = "<span style='color: red'>Please enter the brand's name!";
+        BrandsName.addClass('input-error');
+        $("#response").html(errorMsg);
+    }
+    else {
+        BrandsName.removeClass('input-error');
+        var fdata = new FormData();
+        var files = $("#Image")[0].files[0];
+        fdata.append('Image', files);
+        $.ajax({
+            // adding BrandsName and Country through the link
+            url: "includes/updating_Brands.php?BrandsName=" + BrandsName.val() + "&Country=" + Country.val() + "&link=" + link, 
+            type: 'post',
+            data: fdata,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                alert(data);
+                if (!data || data == "" || data == null) {
+                    // window.location.href = 'Brands.html';
+                }
+                else {
+                    $("#response").html(data);
+                }
+            }
+        });
+    }
+}
+
+/****** function to update Image  ******/
+function updateImage (table, link) {
+    var fdata = new FormData();
+    var files = $("#Image")[0].files[0];
+    fdata.append('Image', files);
+    $.ajax ({
+        // passing table and link through url
+        url: "includes/update_image_" + table + ".php?table=" + table + "&link=" + link,
+        type: 'post',
+        data: fdata,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            if (!data || data == "" || data == null) {
+                window.location.href = 'Brands.html';
+            }
+            else {
+                $("#response").html(data);
+            }
+        }
+    });
 }

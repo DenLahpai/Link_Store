@@ -94,7 +94,6 @@ header {
     align-items: center;
 }
 
-
 .nav-menu-middle {
     padding: 3px;
     text-align: left;
@@ -183,6 +182,14 @@ header {
     margin: 9px;
 }
 
+.form label {
+    background-color: var(--color3);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 3px 12px;
+    border-radius: 6px;
+}
+
 #modules {
     text-align: center;
 }
@@ -199,7 +206,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 12px;      
+    padding: 12px;          
 }
 
 .module-card-body {
@@ -222,6 +229,15 @@ header {
     font-size: 3em;
 }
 
+.module-card-title > a {
+    text-align: center;
+}
+
+.module-card-body-contents-count > div > a {
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
 .row-counts {
     width: 60px;
     height: 60px;
@@ -232,7 +248,8 @@ header {
     border-radius: 18px;
     color: black;
     border: 0px;
-    position: relative;    
+    position: relative; 
+    cursor: pointer;   
 }
 
 .row-counts p {
@@ -243,9 +260,8 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.module-card-bottom {
+.row-counts > div > a {
     color: #FFFFFF;
-    padding: 6px;
 }
 
 #module-brands {
@@ -263,13 +279,37 @@ header {
     color: var(--color4);
 }
 
+.logo {
+    border: 1px solid #FFFFFF;
+    width: 120px;
+    height: 120px; 
+    display: flex;
+    place-items: center;
+    text-align: center; 
+}
+
+.logo > img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;             
+    max-height: 100%;    
+}
+
+.logo > button {
+    border: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+/****** Styles for modal ******/
+
 /****** Styles for pagination ******/
 .pages {
     padding-top: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+                                                                                                                                                                                    
 }
 
 .pages > input {

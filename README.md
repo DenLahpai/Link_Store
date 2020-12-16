@@ -23,3 +23,5 @@ limit = 10;
 offset = 20
 Formula = page X limit - 10 = 20
 display = 21 to 30;
+
+onclick="window.location.href='<? echo "update_Brands.html?link=$row_Brands->BrandsLink";?>'"
