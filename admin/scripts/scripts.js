@@ -417,9 +417,9 @@ function updateBrands (link) {
             contentType: false,
             processData: false,
             success: function (data) {
-                alert(data);
+                
                 if (!data || data == "" || data == null) {
-                    // window.location.href = 'Brands.html';
+                    window.location.href = 'Brands.html';
                 }
                 else {
                     $("#response").html(data);
@@ -450,4 +450,16 @@ function updateImage (table, link) {
             }
         }
     });
+}
+
+/****** function to update Image  ******/
+function exportBrands () {
+    var Search = $("#Search").val();
+    var order = $("#order").val();
+    var limit = $("#limit").val();
+    var offset = $("#offset").val();
+
+    window.location.href = 'includes/export_Brands.php?Search=' + Search + '&order=' + 
+    order + '&limit=' + limit + '&offset=' + offset; 
+
 }

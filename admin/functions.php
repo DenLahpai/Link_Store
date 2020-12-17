@@ -186,6 +186,40 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
             $db->query($stm);
             $db->bind(':Search', $var1);
             return $db->resultset();
+            break;
+            
+        case 'select_all_array':
+            #code...
+            $stm = "SELECT 
+                Id, 
+                BrandsName AS Name,
+                Country,
+                Image,
+                Created, 
+                Updated
+                FROM Brands ;";
+            $db->query($stm);
+            return $db->resultsetArray();
+            break;
+            
+        case 'search_all_array': 
+            #code...
+            $Search = '%'.$_REQUEST['Search'].'%';
+            $stm = "SELECT 
+                Id, 
+                BrandsName AS Name, 
+                Country,
+                Image, 
+                Created, 
+                Updated
+                FROM Brands WHERE CONCAT(
+                    BrandsName, 
+                    Country
+                ) LIKE :Search
+            ;";
+            $db->query($stm);
+            $db->bind(':Search', $Search);
+            return $db->resultsetArray();
             break;    
 
         default:

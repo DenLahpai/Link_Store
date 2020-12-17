@@ -357,7 +357,8 @@ footer {
     margin-left: 18px;
     font-size: 1.5em;    
     font-weight: bold;
-    border-radius: 50%;     
+    border-radius: 50%;   
+    text-align: center;  
 }
 
 
