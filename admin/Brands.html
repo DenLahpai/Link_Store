@@ -24,6 +24,12 @@
                     <button class="round-button" onclick="Toggle('#sorting_form')" title="export to Excel">xl</button>
                 </div>
             </section>
+            <section id="search_form">
+                <div>
+                    <input type="text" id="Search" placeholder="Search...">
+                    <button class="round-button" style="margin-left: 1px;" onclick="pagination ('Brands');">&#9654</button>
+                </div>
+            </section>
             <section id="sorting_form">
                 <div>
                     Sorting: 
@@ -69,11 +75,7 @@ $(document).ready(function () {
     //function to get header (menu-bar)
     $.get("includes/header.php", function (data){
         $("header").prepend(data);
-    });
-
-    $.get("includes/search_form.html", function (data) {
-        $("#page_title").after(data);
-    })
+    });   
 
     // function to include footer
     $.get("includes/footer.php", function (data) {

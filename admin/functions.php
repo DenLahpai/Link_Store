@@ -76,6 +76,7 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
             $db->query($stm);
             $db->bind(":var1", trim($_REQUEST["$var1"]));
             return $db->rowCount();
+            break;
         
         case 'insert':
             # var1 = Image
@@ -173,6 +174,18 @@ function table_Brands ($job, $var1, $var2, $var3, $order, $limit, $offset) {
             else {
                 return "<span style='color: red'>There was a connection error! Please try again! </span>";
             }
+            break;
+            
+        case 'search':
+            # var1 = :Search 
+            $stm = "SELECT * FROM Brands WHERE CONCAT (
+                BrandsName,
+                Country
+                ) LIKE :Search $order LIMIT $limit OFFSET $offset
+            ;";
+            $db->query($stm);
+            $db->bind(':Search', $var1);
+            return $db->resultset();
             break;    
 
         default:

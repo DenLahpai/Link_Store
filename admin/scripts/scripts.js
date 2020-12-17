@@ -220,8 +220,8 @@ function pagination (table) {
         }, function (data) {
             var numRows = data;
             //calculating number of pages
-            // var totalPages = Math.ceil(numRows / limit);
-            var totalPages = 25;
+            var totalPages = Math.ceil(numRows / limit);
+            // var totalPages = 25; DUMMY to test pagination
                      
             if (page == 1) {
                 var page1 = Number(page);
@@ -324,6 +324,14 @@ function getData(table){
         }
     
     );
+}
+
+/****** function to get search form  ******/
+function getSearchForm (table) {
+    $("#search_table").val(table);
+    $.get("includes/search_form.html", function (data) {
+
+    });
 }
 
 //function to dispaly preview of an image to be uploaded
