@@ -1,0 +1,100 @@
+[18-Dec-2020 21:56:57 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:56:58 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:08 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:08 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:08 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:09 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:09 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:10 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:26 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:26 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:27 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:27 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:27 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:28 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:28 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:28 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:28 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:29 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:29 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
+[18-Dec-2020 21:57:29 Asia/Yangon] PHP Fatal error:  Uncaught Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/denlpmm/public_html/sites/Store/admin/handler.php:22
+Stack trace:
+#0 /home/denlpmm/public_html/sites/Store/admin/includes/login.php(4): Database->__construct()
+#1 {main}
+  thrown in /home/denlpmm/public_html/sites/Store/admin/handler.php on line 22
